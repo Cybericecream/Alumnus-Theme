@@ -1,0 +1,74 @@
+$white: #ffffff;
+$black: #000000;
+
+$bodyColour: #eff6fa;
+$generalText: black;
+
+$accentColor: var(--accent-color);
+
+$navColour: $bodyColour;
+$navItems: $generalText;
+$navItemsHighlight: $accentColor;
+
+$heroImageHeight: 50vh;
+
+$widgetRadius: 1rem;
+$widgetPadding: .5rem;
+
+$mobileNavMenuSide: right;
+$mobileNavMenuClosebuttonSize: 5rem;
+
+$menu-hover-transition: all 0.35s ease;
+$menu-hover-lines-width: 3px;
+
+$carouselGradient: $white;
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+body{
+  font-family: 'PT Sans', sans-serif;
+}
+
+@mixin pageWidth {
+  max-width: 1500px;
+  width: calc(100vw - 5rem);
+  margin: 0 auto;
+  @include mobile {
+    width: 100vw;
+  }
+}
+
+@mixin drop-shadow {
+  -webkit-box-shadow: 10px 10px 20px -15px $black;
+  -moz-box-shadow: 10px 10px 20px -15px $black;
+  box-shadow: 10px 10px 20px -15px $black;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span {
+  // font-family: 'Source Sans Pro', sans-serif;
+  color: $generalText;
+}
+
+@mixin jumpout {
+  width: 100vw;
+  div{
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 40rem) {
+    @content;
+  }
+}
