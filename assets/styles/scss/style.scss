@@ -67,6 +67,8 @@ CSS file.
 // Import your custom styles
 @import "global";
 @import "config";
+@import "fa/scss/fontawesome";
+@import "fa/css/all";
 
 //Custom Styling
 h1, h2, h3, h4, h5, h6, p, a, span {
@@ -280,6 +282,9 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   .subFooter {
     background-color: $accentColor;
     color: $white;
+    p{
+      color: $white;
+    }
   @include jumpout;
     // @include jumpout;
   }
