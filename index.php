@@ -9,5 +9,6 @@
 
 get_header(); ?>
 
+<?php get_sidebar('primary-sidebar'); ?>
 
 <?php get_footer(); ?>

@@ -54,24 +54,23 @@ add_action('init', 'alumnus_login_manager_init');
 
 // Generate the html content for alumnus login
 function alumnus_login_form() {
-    if ( !is_user_logged_in() ) {
-        $args = array(
-            'echo' => false,
-            'remember' => true,
-            'redirect' => get_permalink(),
-            'form_id' => 'alumnus_login',
-            'id_username' => 'alumnus_user_login',
-            'id_password' => 'almunus_password_login',
-            'id_remember' => 'alumnus_remember_me',
-            'id_submit' => 'alumnus_submit',
-            'label_username' => __( 'Enter your username'),
-            'label_password' => __( 'Password'),
-            'label_remember' => __( 'Remember Me' ),
-            'label_log_in' => __( 'Login' ),
-            'value_username' => '',
-            'value_remember' => false
-        );
-        $output = wp_login_form( $args );
+    // if ( !is_user_logged_in() ) {
+    if (!false) {
+        $output = '
+            <form method="POST" class="grid-x grid-padding-x first">
+                <div class="loginTile__title cell small-12 grid-x text-center">
+                    <div class="small-12 active">
+                        <h2>Login to the Alumni</h2>
+                    </div>
+                </div>
+                <div class="loginTile__body columns cell large-2 large-offset-5">
+                    <input type="email" placeholder="Email" class="loginTile__input">
+                    <input type="password" placeholder="Password" class="loginTile__input">
+                    <button type="reset" class="btn">Clear Form</button>
+                    <button type="submit" class="btn primaryButton">Login</button>
+                </div>
+            </form>
+        ';
     } else {
         $output = '<h3>You\'re logged in</h3>';
     }
