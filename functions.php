@@ -45,3 +45,6 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
+
+// Carousel pull in
+// require_once(get_template_directory().'/functions/carousel.php');
