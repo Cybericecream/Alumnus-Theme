@@ -47,10 +47,12 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // require_once(get_template_directory().'/functions/admin.php'); 
 
 require_once(get_template_directory() . '/widgets/Alumnus_Login_Form.php');
+require_once(get_template_directory() . '/widgets/Alumnus_Register_Form.php');
 
-function register_alumnus_login_form() {
+// Register the internal widgets.
+function register_widgets() {
     register_widget( 'alumnus_login_form' );
+    register_widget( 'alumnus_register_form' );
 }
 
-add_action( 'widgets_init', 'register_alumnus_login_form' );
-
+add_action( 'widgets_init', 'register_widgets' );
