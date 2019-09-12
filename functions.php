@@ -46,36 +46,11 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
 
-function alumnus_login_manager_init() {
-    add_shortcode( 'alumnus-login-form', 'alumnus_login_form' );
+require_once(get_template_directory() . '/widgets/Alumnus_Login_Form.php');
+
+function register_alumnus_login_form() {
+    register_widget( 'alumnus_login_form' );
 }
 
-add_action('init', 'alumnus_login_manager_init');
-
-// Generate the html content for alumnus login
-function alumnus_login_form() {
-    // if ( !is_user_logged_in() ) {
-    if (!false) {
-        $output = '
-            <form method="POST" class="grid-x grid-padding-x first">
-                <div class="loginTile__title cell small-12 grid-x text-center">
-                    <div class="small-12 active">
-                        <h2>Login to the Alumni</h2>
-                    </div>
-                </div>
-                <div class="loginTile__body columns cell large-2 large-offset-5">
-                    <input type="email" placeholder="Email" class="loginTile__input">
-                    <input type="password" placeholder="Password" class="loginTile__input">
-                    <button type="reset" class="btn">Clear Form</button>
-                    <button type="submit" class="btn primaryButton">Login</button>
-                </div>
-            </form>
-        ';
-    } else {
-        $output = '<h3>You\'re logged in</h3>';
-    }
-    return $output;
-}
-
-add_filter('widget_text', 'do_shortcode');
+add_action( 'widgets_init', 'register_alumnus_login_form' );
 
