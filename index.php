@@ -9,67 +9,37 @@
 
 get_header(); ?>
 
-<?php
-$args = array(
-  'post_type'   => 'testimonials',
-  'post_status' => 'publish',
-  'tax_query'   => array(
-  	array(
-  		'taxonomy' => 'testimonial_service',
-  		'field'    => 'slug',
-  		'terms'    => 'diving'
-  	)
-  )
- );
- 
-$testimonials = new WP_Query( $args );
-if( $testimonials->have_posts() ) :
-?>
-  <ul>
-    <?php
-      while( $testimonials->have_posts() ) :
-        $testimonials->the_post();
-        ?>
-          <li><?php printf( '%1$s - %2$s', get_the_title(), get_the_content() );  ?></li>
-        <?php
-      endwhile;
-      wp_reset_postdata();
-    ?>
-  </ul>
-<?php
-else :
-  esc_html_e( 'No testimonials in the diving taxonomy!', 'text-domain' );
-endif;
-?>
+
+<!-- <div class="blog-header">
+    <h1 class="blog-title"><?php bloginfo( 'name' ); ?></h1>
+    <?php $description = get_bloginfo( 'description', 'display' ); ?>
+    <?php if($description) { ?><p class="lead blog-description"><?php echo $description ?></p><?php } ?>
+</div> -->
 
 <!-- <img class="heroImage" src="images/banner.png" /> -->
 <div class="orbit pageCarousel" role="region" data-orbit>
     
   <ul class="orbit-container">
 
-  <li class="orbit-slide is-active">
-    <figure class="orbit-figure heroImage">
-      <img class="orbit-image " src="images/banner01.jpg" alt="Space">
-    </figure>
-  </li>
+  <?php
+  $loop = new WP_Query( array(
+      'post_type' => 'slider',
+      'posts_per_page' => -1
+    )
+  );
+  ?>
 
-  <li class="orbit-slide is-active">
-    <figure class="orbit-figure heroImage">
-      <img class="orbit-image " src="images/banner02.jpg" alt="Space">
-    </figure>
-  </li>
+  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-  <li class="orbit-slide is-active">
-    <figure class="orbit-figure heroImage">
-      <img class="orbit-image " src="images/banner03_1.jpg" alt="Space">
-    </figure>
-  </li>
+    <li class="orbit-slide is-active">
+      <figure class="orbit-figure heroImage">
+        <?php the_post_thumbnail( 'full', array('class' => 'orbit-image')); ?>
+        <!-- <img class="orbit-image " src="images/banner01.jpg" alt="Space"> -->
+      </figure>
+    </li>
 
-  <li class="orbit-slide is-active">
-    <figure class="orbit-figure heroImage">
-      <img class="orbit-image " src="images/banner05_1.jpg" alt="Space">
-    </figure>
-  </li>
+  <?php endwhile; wp_reset_query(); ?>
+
   <!-- More slides... -->
 </ul>
 
