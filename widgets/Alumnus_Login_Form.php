@@ -3,7 +3,6 @@
 class Alumnus_Login_Form extends WP_Widget {
   public function __construct() {
     $widget_options = array(
-      'classname' => '',
       'description' => 'Alumnus Login Form which can be placed anywhere'
     );
     parent::__construct( 'alumnus_login_form', 'Alumnus Login Form', $widget_options);
