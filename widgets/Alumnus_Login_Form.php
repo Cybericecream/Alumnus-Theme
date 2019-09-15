@@ -15,10 +15,10 @@ class Alumnus_Login_Form extends WP_Widget {
         <form name="loginForm" id="loginForm" method="POST" action="' . esc_url( site_url( 'wp-login.php' )) . '">
           <div class="loginTile__body grid-x grid-margin-x">
             <div class="large-4 large-offset-4 cell">
-              <input type="text" placeholder="Username or Email Address" class="loginTile__input" name="user_login" required>
+              <input type="text" placeholder="Username or Email Address" class="loginTile__input" name="log" required>
             </div>
             <div class="large-4 large-offset-4 cell">
-              <input type="password" placeholder="Password" class="loginTile__input" name="user_login" required>
+              <input type="password" placeholder="Password" class="loginTile__input" name="pwd" required>
             </div>
             <div class="large-2 large-offset-4 cell">
               <button type="reset" class="btn">Clear</button>
@@ -26,6 +26,7 @@ class Alumnus_Login_Form extends WP_Widget {
             <div class="large-2 cell">
               <button type="submit" class="btn primaryButton">Login</button>
             </div>
+            <input type="hidden" name="redirect_to" value="http://localhost/alumni-wordpress/">
           </div>
         </form>
       </div>
