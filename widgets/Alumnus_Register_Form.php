@@ -17,7 +17,6 @@ if (! class_exists('Alumnus_Register_Form')) {
         if ( ! empty( $_POST['last_name'] ) ) {
           update_user_meta( $user_id, 'last_name', sanitize_text_field( $_POST['last_name'] ) );
         }
-
         if (! empty( $_POST['yearGraduated'] ) ) {
           update_user_meta( $user_id, 'yearGraduated', sanitize_text_field( $_POST['yearGraduated'] ) );
         }
@@ -46,9 +45,6 @@ if (! class_exists('Alumnus_Register_Form')) {
               <div class="large-4 large-offset-4 cell"> 
                 <input type="email" placeholder="Email" class="loginTile__input" name="user_email" required>
               </div>
-              <div class="large-4 large-offset-4 cell"> 
-                <input type="password" placeholder="Password" class="loginTile__input" name="user_password" required>
-              </div>
               <div class="large-2 large-offset-4 cell"> 
                 <input type="text" placeholder="First Name" class="loginTile__input" name="first_name" required>
               </div>
@@ -69,6 +65,7 @@ if (! class_exists('Alumnus_Register_Form')) {
               <div class="large-2 cell">
                 <button type="submit" class="btn primaryButton">Register</button>
               </div>
+              <input type="hidden" name="redirect_to" value="http://localhost/alumni-wordpress/">
             </div>
           </form>
         </div>
