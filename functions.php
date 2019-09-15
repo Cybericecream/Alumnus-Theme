@@ -56,3 +56,41 @@ function register_widgets() {
 }
 
 add_action( 'widgets_init', 'register_widgets' );
+
+function redirect_login_page() {
+    $login_page = home_url('/login');
+    $paged_viewed = basename($_SERVER['REQUEST_URI']);
+
+    if ($paged_viewed == 'wp-login.php' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+        wp_redirect($login_page);
+        exit;
+    }
+}
+
+add_action('init', 'redirect_login_page');
+
+function custom_login_failed() {
+    $login_page = home_url('/login');
+    wp_redirect($login_page . '?login=failed');
+    exit;
+}
+
+add_action('wp_login_failed', 'custom_login_failed');
+
+function logout_redirect() {
+    $login_page = home_url('/login');
+    wp_redirect($login_page . '?login=failed');
+    exit;
+}
+
+add_action('wp_logout', 'logout_redirect');
+
+function auto_login_registered_user( $user_id ) {
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id);
+    $user = get_user_by( 'id', $user_id );
+    do_action( 'wp_login', $user->user_login );
+    wp_redirect( home_url() );
+    exit;
+}
+add_action( 'user_register', 'auto_login_registered_user' );
