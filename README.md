@@ -1,5 +1,8 @@
 <<<<<<< HEAD
-Currently using Foundation 6.5.3.
+
+#Project Alumnus
+##The Perth Alumnus Theme
+As made by Nathan, Josh and Nathaniel
 
 ## JointsWP Requirements
 JointsWP requires [Node.js](https://nodejs.org) v6.9.x or newer. This doesn't mean you need to understand Node (or even Gulp) - it's just the steps we need to take to make sure all of our development tools are installed. 

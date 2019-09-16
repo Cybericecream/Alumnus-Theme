@@ -13,6 +13,9 @@ require_once(get_template_directory().'/functions/cleanup.php');
 // Register scripts and stylesheets
 require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
 
+// Register the Font Awesome Library
+require_once(get_template_directory().'/functions/font-awesome.php');
+
 // Register custom menus and menu walkers
 require_once(get_template_directory().'/functions/menu.php'); 
 
@@ -27,6 +30,9 @@ require_once(get_template_directory().'/functions/page-navi.php');
 
 // Adds support for multiple languages
 require_once(get_template_directory().'/functions/translation/translation.php'); 
+
+// Pulling Custom Post Types
+require_once(get_template_directory().'/parts/custom-post-types.php');
 
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
@@ -45,3 +51,12 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
+
+// Carousel pull in
+// require_once(get_template_directory().'/functions/carousel.php');
+
+function indexTextArea() {
+    $wp_customize->add_section('indexTextAreaSection', array(
+        'title' => 'Text Area'
+    ));
+}
