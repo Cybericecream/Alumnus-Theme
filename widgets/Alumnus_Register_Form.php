@@ -51,7 +51,7 @@ if (! class_exists('Alumnus_Register_Form')) {
               <div class="large-2 cell">
                 <button type="submit" class="btn primaryButton">Register</button>
               </div>
-              <input type="hidden" name="redirect_to" value="http://localhost/alumni-wordpress/">
+              <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
             </div>
           </form>
         </div>
