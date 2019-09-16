@@ -104,7 +104,7 @@ add_action('wp_login_failed', 'custom_login_failed');
 
 function logout_redirect() {
     $login_page = home_url('/login');
-    wp_redirect($login_page . '?login=failed');
+    wp_redirect($login_page . '?logged_out=true');
     exit;
 }
 
