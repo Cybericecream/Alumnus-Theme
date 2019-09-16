@@ -7,24 +7,10 @@ if (! class_exists('Alumnus_Register_Form')) {
         'description' => 'Alumnus Register Form which can be placed anywhere'
       );
       parent::__construct( 'Alumnus_Register_Form', 'Alumnus Register Form', $widget_options);
-
-      // Enable saving of custom user meta data.
-      add_action( 'user_register', 'save_user_meta_data' );
-      function save_user_meta_data( $user_id ) {
-        if ( ! empty( $_POST['first_name'] ) ) {
-          update_user_meta( $user_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
-        }
-        if ( ! empty( $_POST['last_name'] ) ) {
-          update_user_meta( $user_id, 'last_name', sanitize_text_field( $_POST['last_name'] ) );
-        }
-        if (! empty( $_POST['yearGraduated'] ) ) {
-          update_user_meta( $user_id, 'yearGraduated', sanitize_text_field( $_POST['yearGraduated'] ) );
-        }
-      }
     }
 
     public function form( $instance ) {
-
+      
     }
     
     public function widget( $args, $instance ) {
@@ -33,7 +19,7 @@ if (! class_exists('Alumnus_Register_Form')) {
       $endYear = date('Y');
       $gradYearOptions = '';
       for ($year = $endYear; $year >= $startYear; $year--) { 
-        $gradYearOptions .= '<option name="yearGraduated" value="' . $year . '">'. $year . '</option>';
+        $gradYearOptions .= '<option value="' . $year . '">'. $year . '</option>';
       }
       echo '
         <div class="grid-container">
