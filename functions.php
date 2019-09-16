@@ -13,6 +13,9 @@ require_once(get_template_directory().'/functions/cleanup.php');
 // Register scripts and stylesheets
 require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
 
+// Register the Font Awesome Library
+require_once(get_template_directory().'/functions/font-awesome.php');
+
 // Register custom menus and menu walkers
 require_once(get_template_directory().'/functions/menu.php'); 
 
@@ -51,3 +54,9 @@ require_once(get_template_directory().'/parts/custom-post-types.php');
 
 // Carousel pull in
 // require_once(get_template_directory().'/functions/carousel.php');
+
+function indexTextArea() {
+    $wp_customize->add_section('indexTextAreaSection', array(
+        'title' => 'Text Area'
+    ));
+}
