@@ -46,85 +46,13 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
 
-require_once(get_template_directory() . '/widgets/Alumnus_Login_Form.php');
-require_once(get_template_directory() . '/widgets/Alumnus_Register_Form.php');
+require_once(get_template_directory() . '/parts/widgets.php');
 
-// Register the internal widgets.
-function register_widgets() {
-    register_widget( 'Alumnus_Login_Form' );
-    register_widget( 'Alumnus_Register_Form' );
-}
+// Redirect
+require_once(get_template_directory() . '/functions/redirect.php');
 
-add_action( 'widgets_init', 'register_widgets' );
+// Alumnus login functionality
+require_once(get_template_directory() . '/functions/alumnus_login.php'); 
 
-function redirect_login_page() {
-    $login_page = home_url('/login');
-    $page_viewed = basename($_SERVER['REQUEST_URI']);
-
-    if ($page_viewed == 'wp-login.php' && $_SERVER['REQUEST_METHOD'] == 'GET') {
-        wp_redirect($login_page);
-        exit;
-    }
-}
-
-add_action('init', 'redirect_login_page');
-
-function redirect_register_page() {
-    $register_page = home_url('/register');
-    $page_viewed = basename($_SERVER['REQUEST_URI']);
-
-    if ($page_viewed == 'wp-login.php?action=register' && $_SERVER['REQUEST_METHOD'] == 'GET') {
-        wp_redirect($register_page);
-        exit;
-    }
-}
-
-add_action('init', 'redirect_register_page');
-
-function redirect_logged_in_users() {
-    if (is_user_logged_in()) {
-        $home_page = home_url();
-        $page_viewed = basename($_SERVER['REQUEST_URI']);
-        if ($page_viewed == 'register' || $page_viewed == 'login') {
-            wp_redirect($home_page);
-            exit;
-        }
-    }
-}
-
-add_action('init', 'redirect_logged_in_users');
-
-function custom_login_failed() {
-    $login_page = home_url('/login');
-    wp_redirect($login_page . '?login=failed');
-    exit;
-}
-
-add_action('wp_login_failed', 'custom_login_failed');
-
-function logout_redirect() {
-    $login_page = home_url('/login');
-    wp_redirect($login_page . '?logged_out=true');
-    exit;
-}
-
-add_action('wp_logout', 'logout_redirect');
-
-function registered_user_setup( $user_id ) {
-    if ( isset( $_POST['first_name'] ) ) {
-        update_user_meta( $user_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
-    }
-    if ( isset( $_POST['last_name'] ) ) {
-        update_user_meta( $user_id, 'last_name', sanitize_text_field( $_POST['last_name'] ) );
-    }
-    if ( isset( $_POST['yearGraduated'] ) ) {
-        update_user_meta( $user_id, 'yearGraduated', sanitize_text_field( $_POST['yearGraduated'] ) );
-    }
-    wp_set_current_user($user_id);
-    wp_set_auth_cookie($user_id);
-    $user = get_user_by( 'id', $user_id );
-    do_action( 'wp_login', $user->user_login );
-    wp_redirect( home_url() );
-    exit;
-}
-add_action( 'user_register', 'registered_user_setup' );
+// Alumnus registration functionality
+require_once(get_template_directory() . '/functions/alumnus_register.php'); 
