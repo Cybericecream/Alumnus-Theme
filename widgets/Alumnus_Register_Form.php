@@ -7,6 +7,8 @@ if (! class_exists('Alumnus_Register_Form')) {
         'description' => 'Alumnus Register Form which can be placed anywhere'
       );
       parent::__construct( 'Alumnus_Register_Form', 'Alumnus Register Form', $widget_options);
+
+      
     }
 
     public function form( $instance ) {
