@@ -52,7 +52,7 @@ require_once(get_template_directory() . '/parts/widgets.php');
 require_once(get_template_directory() . '/functions/redirect.php');
 
 // Alumnus login functionality
-require_once(get_template_directory() . '/functions/alumnus_login.php'); 
+require_once(get_template_directory() . '/functions/alumnus_login_form.php'); 
 
 // Alumnus registration functionality
-require_once(get_template_directory() . '/functions/alumnus_register.php'); 
+require_once(get_template_directory() . '/functions/alumnus_register_form.php'); 
