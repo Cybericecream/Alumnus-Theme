@@ -67,6 +67,8 @@ function redirect_login_page() {
     }
 }
 
+add_action('init', 'redirect_login_page');
+
 function redirect_register_page() {
     $register_page = home_url('/register');
     $page_viewed = basename($_SERVER['REQUEST_URI']);
@@ -77,8 +79,20 @@ function redirect_register_page() {
     }
 }
 
-add_action('init', 'redirect_login_page');
 add_action('init', 'redirect_register_page');
+
+function redirect_logged_in_users() {
+    if (is_user_logged_in()) {
+        $home_page = home_url();
+        $page_viewed = basename($_SERVER['REQUEST_URI']);
+        if ($page_viewed == 'register' || $page_viewed == 'login') {
+            wp_redirect($home_page);
+            exit;
+        }
+    }
+}
+
+add_action('init', 'redirect_logged_in_users');
 
 function custom_login_failed() {
     $login_page = home_url('/login');
