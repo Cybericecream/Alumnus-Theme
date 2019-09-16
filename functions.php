@@ -34,6 +34,9 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // Pulling Custom Post Types
 require_once(get_template_directory().'/parts/custom-post-types.php');
 
+//Custom Menus
+require_once(get_template_directory().'/parts/custom-menu.php');
+
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
 
