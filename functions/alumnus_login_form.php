@@ -9,7 +9,11 @@ function redirect_login_page() {
     }
 }
 
-add_action('init', 'redirect_login_page');
+function alumnus_init_functions() {
+    redirect_login_page();
+}
+
+add_action('init', 'alumnus_init_functions');
 
 function logout_redirect() {
     $login_page = home_url('/login');
