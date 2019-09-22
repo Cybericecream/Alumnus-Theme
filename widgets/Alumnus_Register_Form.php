@@ -23,7 +23,7 @@ if (! class_exists('Alumnus_Register_Form')) {
       }
       echo '
         <div class="grid-container">
-          <form name="registerForm" id="registerForm" method="POST" action="' . esc_url( site_url( 'wp-login.php?action=register' )) .'">
+          <form name="registerForm" id="registerForm" method="POST" action="' . esc_url( site_url( '/register' )) .'">
             <div class="loginTile__body grid-x grid-margin-x">
               <div class="large-4 large-offset-4 cell">
                 <input type="text" placeholder="Username" class="loginTile__input" name="user_login" required>
