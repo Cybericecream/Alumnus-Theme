@@ -12,7 +12,7 @@ class Alumnus_Login_Form extends WP_Widget {
     echo $args['before_widget'];
     echo '
       <div class="grid-container">
-        <form name="loginForm" id="loginForm" method="POST" action="' . esc_url( site_url( 'wp-login.php' )) . '">
+        <form name="loginForm" id="loginForm" method="POST" action="' . esc_url( site_url( '/login' )) . '">
           <div class="loginTile__body grid-x grid-margin-x">
             <div class="large-4 large-offset-4 cell">
               <input type="text" placeholder="Username or Email Address" class="loginTile__input" name="log" required>
