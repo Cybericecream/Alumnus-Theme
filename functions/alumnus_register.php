@@ -1,8 +1,14 @@
 <?php 
   if ( $_POST['submit'] ) {
     global $wpdb;
+
+    function validate_email(string $email) {
+      $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+      return $email;
+    }
+
     $username = $wpdb->escape($_POST['user_login']); 
-    $email = $wpdb->escape($_POST['user_email']); 
+    $email = validate_email($wpdb->escape($_POST['user_email'])); 
     $firstName = $wpdb->escape($_POST['first_name']);
     $lastName = $wpdb->escape($_POST['last_name']);
     $yearGraduated = $wpdb->escape($_POST['yearGraduated']);
