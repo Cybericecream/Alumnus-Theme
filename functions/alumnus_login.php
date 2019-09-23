@@ -1,26 +1,11 @@
 <?php
 	if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) { 
 		global $wpdb; 
-		
 		//We shall SQL escape all inputs 
 		$username = $wpdb->escape($_POST['log']); 
 		$password = $wpdb->escape($_POST['pwd']); 
 		$remember = $wpdb->escape($_POST['rememberme']); 
 		
-		function form_input_length($inputName, $inputValue, $min, $max) {
-			$fieldLength = strlen( $inputValue );
-			$result = array();
-			if (! ($fieldLength >= $min && $fieldLength <= $max) ) {
-				$message = $inputName . " must be between " . $min . " and " . $max . " characters";
-				$result['passed'] = false;
-				$result['message'] = $message;
-			} else {
-				$result['passed'] = true;
-				$result['message'] = '';
-			}
-			return $result;
-		}
-	
 		// Error handling
 		$formErrors = array();
 		
@@ -44,7 +29,7 @@
 			// Display the errors
 			foreach ( $formErrors as $key => $errorObject ) {
 				foreach ( $errorObject as $key => $value ) {
-					echo '<div>' . $value . '</div>';
+					echo '<div class="form-error">' . $value . '</div>';
 				}
 			}
 		} else {
