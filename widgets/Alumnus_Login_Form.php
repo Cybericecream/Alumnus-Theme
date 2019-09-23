@@ -25,7 +25,7 @@ if (! class_exists('Alumnus_Login_Form')) {
                 <button type="reset" class="btn">Clear</button>
                 </div>
                 <div class="large-2 cell">
-                <button type="submit" class="btn primaryButton">Login</button>
+                <button type="submit" class="btn primaryButton" value="true" name="submit">Login</button>
                 </div>
                 <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
             </div>
