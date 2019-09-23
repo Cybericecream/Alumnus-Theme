@@ -6,7 +6,4 @@
     $firstName = $wpdb->escape($_POST['first_name']);
     $lastName = $wpdb->escape($_POST['last_name']);
     $yearGraduated = $wpdb->escape($_POST['yearGraduated']);
-    
-		echo $yearGraduated;
-
   }
