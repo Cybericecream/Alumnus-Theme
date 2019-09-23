@@ -16,6 +16,16 @@
 			);
 			array_push( $formErrors, $errorObject );
 		}
+
+		$usernameLength = strlen($username);
+		$min = 3;
+		$max = 254;
+		if (! ($usernameLength >= $min && $usernameLength <= $max) ) {
+			$errorObject = array(
+				"message" => 'Username has be within ' . $min . ' and ' . $max . ' characters'
+			);
+			array_push ( $formErrors, $errorObject );
+		} 
 		
 		// Password Validation 
 		if ( empty( $password ) ) {
@@ -24,12 +34,22 @@
 			);
 			array_push( $formErrors, $errorObject );
 		}
+
+		$passwordLength = strlen($password);
+		$min = 3;
+		$max = 255;
+		if (! ($passwordLength >= $min && $passwordLength <= $max) ) {
+			$errorObject = array(
+				"message" => 'Password has be within ' . $min . ' and ' . $max . ' characters'
+			);
+			array_push ( $formErrors, $errorObject );
+		} 
 		
 		if ( count( $formErrors ) > 0 ) {
 			// Display the errors
 			foreach ( $formErrors as $key => $errorObject ) {
 				foreach ( $errorObject as $key => $value ) {
-					echo '<div class="form-error">' . $value . '</div>';
+					echo '<div class="error-message">' . $value . '</div>';
 				}
 			}
 		} else {
