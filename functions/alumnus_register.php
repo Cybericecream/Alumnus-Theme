@@ -1,5 +1,5 @@
 <?php 
-  if ( $_POST['submit'] ) {
+  if ( isset( $_POST['submit'] ) ) {
     global $wpdb;
 
     function validate_email(string $email) {
