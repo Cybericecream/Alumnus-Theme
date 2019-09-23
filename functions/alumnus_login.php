@@ -1,5 +1,5 @@
 <?php
-	if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) { 
+	if ( $_POST['submit'] ) { 
 		global $wpdb; 
 		//We shall SQL escape all inputs 
 		$username = $wpdb->escape($_POST['log']); 
@@ -37,7 +37,7 @@
 
 		$passwordLength = strlen($password);
 		$min = 3;
-		$max = 255;
+		$max = 254;
 		if (! ($passwordLength >= $min && $passwordLength <= $max) ) {
 			$errorObject = array(
 				"message" => 'Password has be within ' . $min . ' and ' . $max . ' characters'
