@@ -32,7 +32,13 @@ require_once(get_template_directory().'/functions/page-navi.php');
 require_once(get_template_directory().'/functions/translation/translation.php'); 
 
 // Pulling Custom Post Types
-require_once(get_template_directory().'/parts/custom-post-types.php');
+require_once(get_template_directory().'/parts/alumni-custom-post-types.php');
+
+// Pulling Custom Menu items for Customizer
+require_once(get_template_directory().'/parts/alumni-customize.php');
+
+// Pulling Custom Widget Zones
+require_once(get_template_directory().'/parts/alumni-widget-zones.php');
 
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
@@ -55,8 +61,7 @@ require_once(get_template_directory().'/parts/custom-post-types.php');
 // Carousel pull in
 // require_once(get_template_directory().'/functions/carousel.php');
 
-function indexTextArea() {
-    $wp_customize->add_section('indexTextAreaSection', array(
-        'title' => 'Text Area'
-    ));
-}
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
