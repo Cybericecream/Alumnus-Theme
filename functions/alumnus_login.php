@@ -1,5 +1,5 @@
 <?php
-	if ( $_POST['submit'] ) { 
+	if ( isset( $_POST['submit'] ) ) { 
 		global $wpdb; 
 		//We shall SQL escape all inputs 
 		$username = $wpdb->escape($_POST['log']); 
