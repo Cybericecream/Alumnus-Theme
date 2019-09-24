@@ -17,16 +17,6 @@
 			array_push( $formErrors, $errorObject );
 		}
 
-		$usernameLength = strlen($username);
-		$min = 3;
-		$max = 254;
-		if (! ($usernameLength >= $min && $usernameLength <= $max) ) {
-			$errorObject = array(
-				"message" => 'Username has be within ' . $min . ' and ' . $max . ' characters'
-			);
-			array_push ( $formErrors, $errorObject );
-		} 
-		
 		// Password Validation 
 		if ( empty( $password ) ) {
 			$errorObject = array(
@@ -34,16 +24,6 @@
 			);
 			array_push( $formErrors, $errorObject );
 		}
-
-		$passwordLength = strlen($password);
-		$min = 3;
-		$max = 254;
-		if (! ($passwordLength >= $min && $passwordLength <= $max) ) {
-			$errorObject = array(
-				"message" => 'Password has be within ' . $min . ' and ' . $max . ' characters'
-			);
-			array_push ( $formErrors, $errorObject );
-		} 
 		
 		if ( count( $formErrors ) > 0 ) {
 			// Display the errors
@@ -57,6 +37,12 @@
 			$creds = array(); 
 			$creds['user_login'] = $username; 
 			$creds['user_password'] = $password; 
-			$user_verify = wp_signon( $creds, false );
+			$user = wp_signon( $creds, false );
+			if ( is_wp_error($user) ) {
+				echo '<div class="error-message">' . $user->get_error_message() . '</div>';
+			} else {
+				wp_set_current_user($user->ID);
+				wp_redirect( home_url() );
+			}
 		}
 	}
