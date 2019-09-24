@@ -22,11 +22,3 @@ function logout_redirect() {
 }
 
 add_action('wp_logout', 'logout_redirect');
-
-function custom_login_failed() {
-    $login_page = home_url('/login');
-    wp_redirect($login_page . '?login=failed');
-    exit;
-}
-
-add_action('wp_login_failed', 'custom_login_failed');
