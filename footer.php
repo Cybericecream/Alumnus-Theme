@@ -55,7 +55,7 @@
         <li><a href=""><i class="fab fa-linkedin-in"></a></i></li>
         <li><a href=""><i class="fab fa-github"></i></a></li>
       </ul>
-      <p>Copyright © Alumnus Australia. All Rights Reserved</p>
+      <p><?php echo get_theme_mod( 'footer_text' ); ?></p>
     </div>
     </div>
 </footer>

@@ -31,7 +31,13 @@ require_once(get_template_directory().'/functions/page-navi.php');
 require_once(get_template_directory().'/functions/translation/translation.php'); 
 
 // Pulling Custom Post Types
-require_once(get_template_directory().'/parts/custom-post-types.php');
+require_once(get_template_directory().'/parts/alumni-custom-post-types.php');
+
+// Pulling Custom Menu items for Customizer
+require_once(get_template_directory().'/parts/alumni-customize.php');
+
+// Pulling Custom Widget Zones
+require_once(get_template_directory().'/parts/alumni-widget-zones.php');
 
 //Custom Menus
 require_once(get_template_directory().'/parts/custom-menu.php');
