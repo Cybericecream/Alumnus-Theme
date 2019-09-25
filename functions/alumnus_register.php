@@ -81,10 +81,10 @@
       );
       $user_id = wp_insert_user ( $userdata );
       if ( is_wp_error($user_id) ) {
-				echo '<div class="error-message">' . $user_id->get_error_message() . '</div>';
-			} else {
-				$user = new WP_User( $user_id );
-        $user->set_role( 'contributor ' );
+		echo '<div class="error-message">' . $user_id->get_error_message() . '</div>';
+	  } else {
+		global $userRole;
+		$user = new WP_User( $user_id );
 
         wp_set_current_user($user_id);
         wp_set_auth_cookie($user_id);
