@@ -33,6 +33,9 @@ if (! class_exists('Alumnus_Register_Form')) {
                     </div>
                     <div class="large-4 large-offset-4 cell"> 
                         <input type="password" placeholder="Password" class="loginTile__input" name="user_pass" required>
+                    </div> 
+                    <div class="large-4 large-offset-4 cell"> 
+                        <input type="password" placeholder="Password Confirm" class="loginTile__input" name="user_pass_confirm" required>
                     </div>
                     <div class="large-2 large-offset-4 cell"> 
                         <input type="text" placeholder="First Name" class="loginTile__input" name="first_name" required>
