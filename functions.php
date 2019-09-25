@@ -3,7 +3,6 @@
  * For more info: https://developer.wordpress.org/themes/basics/theme-functions/
  *
  */			
-	
 // Theme support options
 require_once(get_template_directory().'/functions/theme-support.php'); 
 
@@ -40,6 +39,9 @@ require_once(get_template_directory().'/parts/alumni-customize.php');
 // Pulling Custom Widget Zones
 require_once(get_template_directory().'/parts/alumni-widget-zones.php');
 
+//Custom Menus
+require_once(get_template_directory().'/parts/custom-menu.php');
+
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
 
@@ -58,10 +60,17 @@ require_once(get_template_directory().'/parts/alumni-widget-zones.php');
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
 
+
+require_once(get_template_directory() . '/parts/widgets.php');
+
+// Redirect
+require_once(get_template_directory() . '/functions/redirect.php');
+
+// Alumnus login functionality
+require_once(get_template_directory() . '/functions/alumnus_login_form.php'); 
+
+// Alumnus registration functionality
+require_once(get_template_directory() . '/functions/alumnus_register_form.php'); 
+=======
 // Carousel pull in
 // require_once(get_template_directory().'/functions/carousel.php');
-
-/**
- * Register our sidebars and widgetized areas.
- *
- */

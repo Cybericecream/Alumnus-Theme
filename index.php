@@ -9,6 +9,14 @@
 
 get_header(); ?>
 
+<?php get_sidebar('primary-sidebar'); ?>
+
+<!-- <div class="blog-header">
+    <h1 class="blog-title"><?php bloginfo( 'name' ); ?></h1>
+    <?php $description = get_bloginfo( 'description', 'display' ); ?>
+    <?php if($description) { ?><p class="lead blog-description"><?php echo $description ?></p><?php } ?>
+</div> -->
+
 <!-- <img class="heroImage" src="images/banner.png" /> -->
 <div class="orbit pageCarousel" role="region" data-orbit>
     
