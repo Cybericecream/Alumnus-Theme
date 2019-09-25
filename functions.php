@@ -3,7 +3,6 @@
  * For more info: https://developer.wordpress.org/themes/basics/theme-functions/
  *
  */			
-	
 // Theme support options
 require_once(get_template_directory().'/functions/theme-support.php'); 
 
@@ -55,11 +54,17 @@ require_once(get_template_directory().'/parts/custom-menu.php');
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
 
+
+require_once(get_template_directory() . '/parts/widgets.php');
+
+// Redirect
+require_once(get_template_directory() . '/functions/redirect.php');
+
+// Alumnus login functionality
+require_once(get_template_directory() . '/functions/alumnus_login_form.php'); 
+
+// Alumnus registration functionality
+require_once(get_template_directory() . '/functions/alumnus_register_form.php'); 
+=======
 // Carousel pull in
 // require_once(get_template_directory().'/functions/carousel.php');
-
-function indexTextArea() {
-    $wp_customize->add_section('indexTextAreaSection', array(
-        'title' => 'Text Area'
-    ));
-}

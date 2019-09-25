@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+<?php get_sidebar('primary-sidebar'); ?>
 
 <!-- <div class="blog-header">
     <h1 class="blog-title"><?php bloginfo( 'name' ); ?></h1>
