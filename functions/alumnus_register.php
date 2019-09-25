@@ -10,6 +10,7 @@
     $username = $wpdb->escape($_POST['user_login']); 
     $email = validate_email($wpdb->escape($_POST['user_email'])); 
     $password = $wpdb->escape($_POST['user_pass']);
+    $passwordConfirm = $wpdb->escape($_POST['user_pass_confirm']);
     $firstName = $wpdb->escape($_POST['first_name']);
     $lastName = $wpdb->escape($_POST['last_name']);
     $yearGraduated = $wpdb->escape($_POST['yearGraduated']);
@@ -62,6 +63,13 @@
       array_push ( $formErrors, $errorObject );
     }
 
+    if ( $password !== $passwordConfirm ) {
+      $errorObject = array(
+        "message" => "Password doesn't match"
+      );
+      array_push ( $formErrors, $errorObject );
+    }
+
     if ( count( $formErrors ) > 0 ) {
       // Do something with the errors.
       foreach ( $formErrors as $key => $errorObject ) {
@@ -81,10 +89,10 @@
       );
       $user_id = wp_insert_user ( $userdata );
       if ( is_wp_error($user_id) ) {
-		echo '<div class="error-message">' . $user_id->get_error_message() . '</div>';
-	  } else {
-		global $userRole;
-		$user = new WP_User( $user_id );
+        echo '<div class="error-message">' . $user_id->get_error_message() . '</div>';
+      } else {
+        global $userRole;
+        $user = new WP_User( $user_id );
 
         wp_set_current_user($user_id);
         wp_set_auth_cookie($user_id);
