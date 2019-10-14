@@ -22,7 +22,7 @@ if (! class_exists('Alumnus_Register_Form')) {
             }
             ?>
             <div class="grid-container">
-                <?php require_once dirname(__FILE__) . '\..\functions\alumnus_register.php'; ?>
+                <?php require_once get_template_directory() . '/functions/alumnus_register.php' ?>
                 <form name="registerForm" id="registerForm" method="POST" action="<?php echo esc_url( site_url( '/register' )) ?>">
                     <div class="loginTile__body grid-x grid-margin-x">
                     <div class="large-4 large-offset-4 cell">

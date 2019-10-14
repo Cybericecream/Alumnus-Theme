@@ -40,7 +40,7 @@ require_once(get_template_directory().'/parts/alumni-customize.php');
 require_once(get_template_directory().'/parts/alumni-widget-zones.php');
 
 //Custom Menus
-require_once(get_template_directory().'/parts/custom-menu.php');
+// require_once(get_template_directory().'/parts/custom-menu.php');
 
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
@@ -71,6 +71,6 @@ require_once(get_template_directory() . '/functions/alumnus_login_form.php');
 
 // Alumnus registration functionality
 require_once(get_template_directory() . '/functions/alumnus_register_form.php'); 
-=======
+
 // Carousel pull in
 // require_once(get_template_directory().'/functions/carousel.php');
