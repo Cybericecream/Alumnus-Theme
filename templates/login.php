@@ -25,7 +25,7 @@ get_header();
 			<?php the_widget( 'Alumnus_Login_Form' ); ?> 
         </div>
         <div class="cell small-12 already text-center">
-          <p>Not Registered up? Register <a class="highlight" href="/register"><u>here</u></a></p>
+          <p>Not Registered? Register <a class="highlight" href="/register"><u>here</u></a></p>
         </div>
       </div>
     </div>
