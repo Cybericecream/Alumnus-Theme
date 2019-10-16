@@ -25,8 +25,14 @@ if (! class_exists('Alumnus_Login_Form')) {
             <form name="loginForm" id="loginForm" method="POST" action="<?php echo esc_url( site_url( '/login' )) ?>">
                 <input type="text" placeholder="Username or Email Address" class="loginTile__input" name="log">
                 <input type="password" placeholder="Password" class="loginTile__input" name="pwd">
-                <button type="reset" class="btn">Clear</button>
-                    <button type="submit" class="btn primaryButton">Login</button>
+                <div class="grid-x">
+                    <div class="cell small-6 text-center">
+                        <button type="reset" class="btn">Clear</button>
+                    </div>
+                    <div class="cell small-6 text-center">
+                        <button type="submit" class="btn primaryButton">Login</button>
+                    </DIV>
+                </div>
                 <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
                 <input type='hidden' name='submit' />
             </form>
