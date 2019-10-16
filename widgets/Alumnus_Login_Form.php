@@ -11,27 +11,15 @@ if (! class_exists('Alumnus_Login_Form')) {
         public function widget( $args, $instance ) {
             echo $args['before_widget'];
         ?>
-            <div class="grid-container">	
                 <?php require_once get_template_directory() . '/functions/alumnus_login.php' ?>
                 <form name="loginForm" id="loginForm" method="POST" action="<?php echo esc_url( site_url( '/login' )) ?>">
-                <div class="loginTile__body grid-x grid-margin-x">
-                    <div class="large-4 large-offset-4 cell">
                     <input type="text" placeholder="Username or Email Address" class="loginTile__input" name="log">
-                    </div>
-                    <div class="large-4 large-offset-4 cell">
                     <input type="password" placeholder="Password" class="loginTile__input" name="pwd">
-                    </div>
-                    <div class="large-2 large-offset-4 cell">
                     <button type="reset" class="btn">Clear</button>
-                    </div>
-                    <div class="large-2 cell">
                         <button type="submit" class="btn primaryButton">Login</button>
-                    </div>
                     <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
                     <input type='hidden' name='submit' />
-                </div>
                 </form>
-            </div>
         <?php
             echo $args['after_widget'];
         }
