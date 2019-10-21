@@ -56,10 +56,6 @@ get_header(); ?>
         <a href="signUp.php" class="uppercase primaryButton">sign-up</a>
       </h2>
     </div>
-
-    <div class="cell medium-6 small-6">
-
-    </div>
   </div>
 </div>
 
