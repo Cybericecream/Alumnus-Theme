@@ -24,6 +24,11 @@ global $post;
 							<div class="cell medium-7 small-12 widgetBlock aboutText">
 								<h2><?php echo $post->post_title; ?></h2>
 								<p><?php echo $post->post_content; ?></p>
+								<?php if ( is_active_sidebar( 'test_area' ) ) : ?>
+									<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+										<?php dynamic_sidebar( 'test_area' ); ?>
+									</div>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>

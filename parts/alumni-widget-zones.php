@@ -22,5 +22,11 @@ function alumni_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
+		// Static Index Widget area
+		register_sidebar( array(
+			'name'          => 'Test Area',
+			'id'            => 'test_area',
+		) );
+
 }
 add_action( 'widgets_init', 'alumni_widgets_init' );
