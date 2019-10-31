@@ -21,7 +21,7 @@ get_header();
 							</div>
 							<div class="cell medium-7 small-12 widgetBlock aboutText">
 								<h2><?php single_post_title(); ?></h2>
-								<p><?php get_post()->post_content_filtered; ?></p>
+								<p><?php  ?></p>
 							</div>
 						</div>
 					</div>
