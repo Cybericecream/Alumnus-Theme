@@ -1,32 +1,33 @@
 <?php
-/** 
-* Template Name: Register
-*/ 
+/**
+* Template Name: Contact
+*/
 ob_start();
 get_header();
+global $post;
+
 ?>
 	<!-- Custom Registration functionality -->
-	<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>    
-	<div class="form-background-image" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat;">
-		
-		<div class="grid-x">
-		
-
-		<div class="cell large-4 large-offset-4 medium-6 medium-offset-3 small-10 small-offset-1 main-form first widgetBlock">
-		<div class="grid-x grid-padding-x">
-		<div class="main-form__title cell small-12 grid-x text-center">
-          <div class="cell small-6 ">
-            <h2 class="highlight uppercase">Register</h2>
-          </div>
-          <div class="cell small-6 active">
-          <a href="/login"><h2 class="unselected uppercase">Log-in</h2></a>
-          </div>
-        </div>
-			<div class="main-form__body cell small-12">
-				<?php the_widget( 'Alumnus_Register_Form' ); ?>
+	<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+<!-- 	<div class="form-background-image" style="background: url('<?php //echo $backgroundImg[0]; ?>') no-repeat;"> -->
+		<div class="body">
+				<div class="aboutHero">
+					<img src="<?php echo $backgroundImg[0]; ?>" />
+				</div>
+			<div class="grid-container">
+				<div class="grid-x aboutContent">
+						<div class="cell small-12">
+							<div class="grid-x">
+							<div class="cell medium-5 small-12 ">
+								<img src="<?php echo esc_url( get_theme_mod( 'contact_image' ) ); ?>">  
+							</div>
+							<div class="cell medium-7 small-12 widgetBlock aboutText">
+								<h2><?php echo $post->post_title; ?></h2>
+								<p><?php echo $post->post_content; ?></p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		  </div>
-		</div>
 	</div>
-		  </div>
 <?php get_footer(); ?>
