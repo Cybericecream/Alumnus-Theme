@@ -19,7 +19,7 @@ global $post;
 						<div class="cell small-12">
 							<div class="grid-x">
 							<div class="cell medium-5 small-12 ">
-								<img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )[0];?>  " />
+								<img src="<?php echo esc_url( get_theme_mod( 'about_image' ) ); ?>">  
 							</div>
 							<div class="cell medium-7 small-12 widgetBlock aboutText">
 								<h2><?php echo $post->post_title; ?></h2>

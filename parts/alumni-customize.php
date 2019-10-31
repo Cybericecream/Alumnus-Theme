@@ -70,6 +70,18 @@ $wp_customize->add_control('index_post_list',
   )
 );
 
+$wp_customize->add_setting('about_image', array(
+  'transport'         => 'refresh',
+  'height'         => 325,
+));
+
+  // Add Controls
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'customizer_setting_two_control', array(
+    'label'             => __('About Page Image', 'Alumnus-Perth'),
+    'section'           => 'custom_theme_options',
+    'settings'          => 'about_image',   
+)));
+
 // Footer Text Area
 $wp_customize->add_setting('footer_text', 
   array(
