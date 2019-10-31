@@ -46,6 +46,7 @@ function carousel_post() {
       'menu_name'          => 'Event'
     );
     $args = array(
+      'labels'        => $labels,
       'description'   => 'Holds the Items for the Events List',
       'public'        => true,
       'menu_position' => 5,
