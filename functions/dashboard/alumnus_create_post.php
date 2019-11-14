@@ -26,7 +26,8 @@ if ($user_id === 0)
             $post = [
                 'id' => $user_id,
                 'post_title' => $postTitle,
-                'post_content' => $postContent
+                'post_content' => $postContent,
+                'post_type' => 'post'
             ];
             wp_insert_post($post);
             wp_redirect('/dashboard');
