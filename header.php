@@ -41,15 +41,22 @@
                 <span aria-hidden="true">&times;</span>
             </button>
 
-            <ul class="mobileNavMenu-menu">
-                    <?php wp_nav_menu(
-                                array(
-                                    'menu' => 'primary',
-                                    'link_before' => '<span class="screen-reader-text">',
-                                    'link_after' => '</span>',
-                                )
-                            );?>
-            </ul>
+            
+            <?php wp_nav_menu(
+                        array(
+                            'menu' => 'mobileNav',
+                            'menu_class'     => 'mobileNavMenu-menu',
+                        )
+                    );?>
+
+            <div class="grid-x">
+                <?php if ( is_active_sidebar( 'mobile_nav_widget_area' ) ) : ?>
+                    <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+                        <?php dynamic_sidebar( 'mobile_nav_widget_area' ); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+            
             </div>
         </div>
         <header>
@@ -62,7 +69,7 @@
                         <ul class="menu text-right">
                             <?php wp_nav_menu(
                                 array(
-                                    'menu' => 'primary',
+                                    'menu' => 'main-menu',
                                     'link_before' => '<span class="screen-reader-text">',
                                     'link_after' => '</span>',
                                 )

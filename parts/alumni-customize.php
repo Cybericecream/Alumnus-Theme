@@ -70,6 +70,32 @@ $wp_customize->add_control('index_post_list',
   )
 );
 
+// About Page Image Setting
+$wp_customize->add_setting('about_image', array(
+  'transport'         => 'refresh',
+  'height'         => 325,
+));
+
+// About Page Control
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'about_page_image', array(
+    'label'             => __('About Page Image', 'Alumnus-Perth'),
+    'section'           => 'custom_theme_options',
+    'settings'          => 'about_image',   
+)));
+
+// Contact Page Image Setting
+$wp_customize->add_setting('contact_image', array(
+  'transport'         => 'refresh',
+  'height'         => 325,
+));
+
+// Contact Page Control
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'contact_page_image', array(
+    'label'             => __('Contact Page Image', 'Alumnus-Perth'),
+    'section'           => 'custom_theme_options',
+    'settings'          => 'contact_image',   
+)));
+
 // Footer Text Area
 $wp_customize->add_setting('footer_text', 
   array(
