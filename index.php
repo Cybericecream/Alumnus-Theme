@@ -137,7 +137,7 @@ get_header(); ?>
       endwhile; wp_reset_query(); ?>
 
     </div>
-    <div class="cell large-4 small-0 hide-for-medium widgetHolder grid-x">
+    <div class="cell large-4 small-0 hide-for-small-only hide-for-medium-only widgetHolder grid-x">
 
     <?php if ( is_active_sidebar( 'index_widget_area' ) ) : ?>
       <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
