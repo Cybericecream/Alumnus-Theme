@@ -241,7 +241,7 @@ header {
     ul {
       float: right;
     }
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 64em) {
       display: block;
     }
   }
@@ -251,7 +251,7 @@ header {
     button {
       float: right;
     }
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 64em) {
       display: none;
     }
   }

@@ -63,7 +63,7 @@
             <div class="grid-x">
                 <div class="top-bar cell large-12 small-12 grid-x">
                     <div class="cell small-6">
-                        <h1><?php bloginfo( 'name' ); ?></h1>
+                        <a href="/"><h1><?php bloginfo( 'name' ); ?></h1></a>
                     </div>
                     <div class="desktopNav menu-hover cell small-6">
                         <ul class="menu text-right">
