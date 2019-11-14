@@ -39,6 +39,9 @@ require_once(get_template_directory().'/parts/alumni-customize.php');
 // Pulling Custom Widget Zones
 require_once(get_template_directory().'/parts/alumni-widget-zones.php');
 
+// Pulling Nathaniels test code
+require_once(get_template_directory().'/functions/alumnus-test.php');
+
 //Custom Menus
 require_once(get_template_directory().'/functions/custom-menu.php');
 
