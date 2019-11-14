@@ -14,16 +14,17 @@ if (! class_exists('Alumnus_Post_Form')) {
             }
             echo $args['before_widget'];
         ?>
-            <div class="grid-container">
+            <div class="grid-container ">
+                <div class="postTitle">
 
             <?php if (isset($instance['title'])) { ?>
-                  <div class="loginTile__title">
+                  <div class="postTile__title">
                       <div class="active">
                           <h2><?php echo $args['before_title'] . $title . $args['after_title']; ?></h2>
                       </div>
                   </div>
               <?php } ?>
-            
+
               <?php require_once get_template_directory() . '/functions/dashboard/alumnus_create_post.php'; ?>
               <form name="createPost" id="createPost" method="POST" action="<?php echo esc_url( site_url( '/new-post' )) ?>" enctype="application/x-www-form-urlencoded">
                 <textarea name="content" row="3" placeholder="What's On Your Mind?"></textarea>
@@ -32,6 +33,7 @@ if (! class_exists('Alumnus_Post_Form')) {
                   <!-- <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'"> -->
                   <input type='submit' name='submit' value="Post" />
               </form>
+            </div>
             </div>
         <?php
             echo $args['after_widget'];
@@ -51,7 +53,7 @@ if (! class_exists('Alumnus_Post_Form')) {
             </p>
             <?php
         }
-      
+
         public function update( $new_instance, $old_instance ) {
             $instance = array();
             $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
