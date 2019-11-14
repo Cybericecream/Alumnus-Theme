@@ -29,6 +29,11 @@ global $post;
 										<?php dynamic_sidebar( 'test_area' ); ?>
 									</div>
 								<?php endif; ?>
+								<?php if ( is_active_sidebar( 'contact_widget_area' ) ) : ?>
+								<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+									<?php dynamic_sidebar( 'contact_widget_area' ); ?>
+								</div>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>

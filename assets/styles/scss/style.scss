@@ -983,4 +983,25 @@ $orbit-caption-background: none;
 }
 //user widget
 
+//create post
+  .postTile{
+
+    &__title {
+      .active {
+        h2 {
+          color: $accentColor;
+        }
+      }
+  }
+}
+  .postTitleTextarea{
+    display: block;
+    border: solid 1.5px $accentColor;
+    background: darken(#fff, 1%);
+    border-radius: 0.6rem;
+    padding: 1.5rem;
+    margin: 0.5rem auto;
+  }
+//create post
+  
 //dashboard

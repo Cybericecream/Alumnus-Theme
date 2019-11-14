@@ -15,6 +15,7 @@ if (! class_exists('Alumnus_Login_Form')) {
             echo $args['before_widget'];
         ?>
             <div class="grid-container">
+                <div class="postTile">
               
               <?php if (isset($instance['title'])) { ?>
                   <div class="loginTile__title">
@@ -38,6 +39,7 @@ if (! class_exists('Alumnus_Login_Form')) {
                   <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
                   <input type='hidden' name='submit' />
               </form>
+              </div>
             </div>
         <?php
             echo $args['after_widget'];
