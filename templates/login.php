@@ -11,7 +11,7 @@ get_header();
 	<div class="grid-x">
 		
 
-	<div class="cell large-4 large-offset-4 medium-6 medium-offset-3 small-10 small-offset-1 main-form first widgetBlock">
+	<div class="cell large-4 large-offset-4 large-6 large-offset-3 small-10 small-offset-1 main-form first widgetBlock">
     <div class="grid-x grid-padding-x">
         <div class="main-form__title cell small-12 grid-x text-center">
           <div class="cell small-6 ">

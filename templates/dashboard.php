@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div class="outer">
   <div class="body grid-x">
-    <div class="cell medium-8 small-12 grid-x grid-padding-x grid-padding-y">
+    <div class="cell large-8 small-12 grid-x grid-padding-x grid-padding-y">
       <?php
       $loop = new WP_Query( array(
           'post_type' => 'post',
@@ -21,7 +21,7 @@ get_header(); ?>
           <div class="cell small-12 userPost grid-x">
               <div class="cell small-12 grid-x">
         <? [fep_submission_form]?>
-          <div class="cell txt medium-7 small-12 medium-order-1 small-order-2">
+          <div class="cell txt large-7 small-12 large-order-1 small-order-2">
             <div class="profile">
               <div class="profileImage">
                 <!-- <img src="users/profile/1.jpg"/> -->
@@ -32,7 +32,7 @@ get_header(); ?>
             </div>
               <p><?php the_content(); ?></p>
             </div>
-            <div class="cell medium-5 small-12 medium-order-2 small-order-1 postImage">
+            <div class="cell large-5 small-12 large-order-2 small-order-1 postImage">
               <?php the_post_thumbnail( 'full' ); ?>
             </div>
           </div>
@@ -61,7 +61,7 @@ get_header(); ?>
       } wp_reset_query(); ?>
 
     </div>
-    <div class="cell medium-4 small-0 hide-for-small-only widgetHolder grid-x">
+    <div class="cell large-4 small-0 hide-for-small-only widgetHolder grid-x">
       <?php if ( is_active_sidebar( 'dashboard_widget_area' ) ) : ?>
         <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
           <?php dynamic_sidebar( 'dashboard_widget_area' ); ?>

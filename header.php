@@ -61,7 +61,7 @@
         </div>
         <header>
             <div class="grid-x">
-                <div class="top-bar cell medium-12 small-12 grid-x">
+                <div class="top-bar cell large-12 small-12 grid-x">
                     <div class="cell small-6">
                         <h1><?php bloginfo( 'name' ); ?></h1>
                     </div>

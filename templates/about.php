@@ -18,10 +18,10 @@ global $post;
 				<div class="grid-x aboutContent">
 						<div class="cell small-12">
 							<div class="grid-x">
-							<div class="cell medium-5 small-12 ">
+							<div class="cell large-5 small-12 ">
 								<img src="<?php echo esc_url( get_theme_mod( 'about_image' ) ); ?>">  
 							</div>
-							<div class="cell medium-7 small-12 widgetBlock aboutText">
+							<div class="cell large-7 small-12 widgetBlock aboutText">
 								<h2><?php echo $post->post_title; ?></h2>
 								<p><?php echo $post->post_content; ?></p>
 							</div>
