@@ -98,6 +98,10 @@ span {
   color: lighten($color: $black, $amount: 60%);
 }
 
+.topPadding {
+  padding-top: 1.5rem;
+}
+
 .primaryButton {
   color: $accentColor;
   border: 0.2rem solid $accentColor;

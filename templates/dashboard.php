@@ -7,7 +7,8 @@ get_header(); ?>
 
 <div class="outer">
   <div class="body grid-x">
-    <div class="cell large-8 small-12 grid-x grid-padding-x grid-padding-y">
+    <div class="cell large-8 small-12 topPadding">
+      <div class="grid-x grid-padding-x grid-padding-y">
       <?php
       $loop = new WP_Query( array(
           'post_type' => 'post',
@@ -40,35 +41,42 @@ get_header(); ?>
         <?php 
           }else{ 
         ?>
-        <div class="cell small-12 userPost grid-x">
-          <div class="cell small-12 grid-x">
-            <div class="cell txt small-12">
-              <div class="profile">
-              <div class="profileImage">
-                <!-- <img src="users/profile/1.jpg"/> -->
-                <?php echo get_avatar( get_the_author_meta('ID'), 50); ?>
-              </div>
-              <h2><?php the_author(); ?></h2>
-              <h3><?php the_date(); ?></h3>
-              </div>
-                <p><?php the_content(); ?></p>
+        <div class="cell small-12 userPost">
+          <div class="grid-x">
+            <div class="cell small-12">
+              <div class="grid-x">
+                <div class="cell txt small-12">
+                  <div class="profile">
+                  <div class="profileImage">
+                    <!-- <img src="users/profile/1.jpg"/> -->
+                    <?php echo get_avatar( get_the_author_meta('ID'), 50); ?>
+                  </div>
+                  <h2><?php the_author(); ?></h2>
+                  <h3><?php the_date(); ?></h3>
+                  </div>
+                    <p><?php the_content(); ?></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <?php
+          }       
+        } wp_reset_query(); ?>            
+          </div>          
         </div>
-        <?php
-        }       
-      } wp_reset_query(); ?>
+        <div class="cell large-4 small-0 hide-for-small-only widgetHolder">
+          <div class="grid-x">
+          <?php if ( is_active_sidebar( 'dashboard_widget_area' ) ) : ?>
+            <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+              <?php dynamic_sidebar( 'dashboard_widget_area' ); ?>
+            </div>
+          <?php endif; ?>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
 
-    </div>
-    <div class="cell large-4 small-0 hide-for-small-only widgetHolder grid-x">
-      <?php if ( is_active_sidebar( 'dashboard_widget_area' ) ) : ?>
-        <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-          <?php dynamic_sidebar( 'dashboard_widget_area' ); ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  </div>
-</div>
 
 <?php get_footer(); ?>
