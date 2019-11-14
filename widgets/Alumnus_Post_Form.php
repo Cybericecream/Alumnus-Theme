@@ -24,13 +24,12 @@ if (! class_exists('Alumnus_Post_Form')) {
                   </div>
               <?php } ?>
             
-              <?php// require_once get_template_directory() . '/functions/alumnus_.php' ?>
-              <form name="createPost" id="createPost" method="POST" action="<?php echo esc_url( site_url( '/createPost' )) ?>" enctype="application/x-www-form-urlencoded">
-                
-                        <textarea name="description" row="3" placeholder="What's On Your Mind?"></textarea>
-                        <input name="image" type="file">
+              <?php require_once get_template_directory() . '/functions/dashboard/alumnus_create_post.php'; ?>
+              <form name="createPost" id="createPost" method="POST" action="<?php echo esc_url( site_url( '/new-post' )) ?>" enctype="application/x-www-form-urlencoded">
+                <textarea name="content" row="3" placeholder="What's On Your Mind?"></textarea>
+                <input name="image" type="file">
 
-                  <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
+                  <!-- <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'"> -->
                   <input type='submit' name='submit' value="Post" />
               </form>
             </div>
