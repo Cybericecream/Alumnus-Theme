@@ -6,8 +6,8 @@
 function custom_new_menu() {
 	register_nav_menus(
 		array(
-		'my-theme-menu' => __( 'Theme Menu' ),
-		'settings-menu' => __( 'Dashboard Settings Menu' ),
+		'main-menu' => __( 'Primary Menu' ),
+		'mobile-nav' => __( 'Mobile Navigation Menu' ),
 		'footer-menu' => __( 'Footer Menu' )
 		)
 	);
