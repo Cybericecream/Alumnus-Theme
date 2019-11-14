@@ -29,6 +29,7 @@ if ($user_id === 0)
                 'post_content' => $postContent
             ];
             wp_insert_post($post);
+            wp_redirect('/dashboard');
         }
     }
 }
