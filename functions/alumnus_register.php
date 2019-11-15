@@ -7,13 +7,13 @@
       return $email;
     }
 
-    $username = $wpdb->escape($_POST['user_login']); 
-    $email = validate_email($wpdb->escape($_POST['user_email'])); 
-    $password = $wpdb->escape($_POST['user_pass']);
-    $passwordConfirm = $wpdb->escape($_POST['user_pass_confirm']);
-    $firstName = $wpdb->escape($_POST['first_name']);
-    $lastName = $wpdb->escape($_POST['last_name']);
-    $yearGraduated = $wpdb->escape($_POST['yearGraduated']);
+    $username = esc_sql($_POST['user_login']); 
+    $email = validate_email(esc_sql($_POST['user_email'])); 
+    $password = esc_sql($_POST['user_pass']);
+    $passwordConfirm = esc_sql($_POST['user_pass_confirm']);
+    $firstName = esc_sql($_POST['first_name']);
+    $lastName = esc_sql($_POST['last_name']);
+    $yearGraduated = esc_sql($_POST['yearGraduated']);
 
     // Validation 
     $formErrors = array();
