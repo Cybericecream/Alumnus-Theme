@@ -999,6 +999,7 @@ $orbit-caption-background: none;
   .postTextarea{
     border: 0.2rem solid $accentColor;
     border-radius: 0.3em;
+    resize: none;
   }
   .postButton{
     width: 5.5rem;

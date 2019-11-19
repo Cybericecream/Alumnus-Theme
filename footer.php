@@ -15,7 +15,7 @@
       <div class="cell large-4 small-12 grid-x">
 
         <div class="cell small-4">
-        <h2>Alumni</h2>
+        <h2><?php echo get_theme_mod( 'left_footer'); ?></h2>
         <ul>
           <?php wp_nav_menu(
             array(
@@ -27,7 +27,7 @@
         </div>
 
         <div class="cell small-4">
-        <h2>Explore</h2>
+        <h2><?php echo get_theme_mod( 'center_footer'); ?></h2>
         <ul>
           <?php wp_nav_menu(
             array(
@@ -39,7 +39,7 @@
         </div>
 
         <div class="cell small-4">
-        <h2>Account</h2>
+        <h2><?php echo get_theme_mod( 'right_footer'); ?></h2>
         <ul>
           <?php wp_nav_menu(
             array(

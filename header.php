@@ -44,7 +44,7 @@
             
             <?php wp_nav_menu(
                         array(
-                            'menu' => 'mobile-nav',
+                            'menu' => 'primary-menu',
                             'menu_class'     => 'mobileNavMenu-menu',
                         )
                     );?>

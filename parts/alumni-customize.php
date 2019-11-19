@@ -97,6 +97,45 @@ $wp_customize->add_setting('contact_image', array(
 )));
 
 // Footer Text Area
+
+$wp_customize->add_setting('left_footer', 
+  array(
+    'default'        => 'Alumni',
+  )
+);
+$wp_customize->add_control('left_footer', 
+  array(
+    'section' => 'custom_theme_options',
+    'label'   => 'Left Footer Menu Title',
+    'type'    => 'input',
+  )
+);
+
+$wp_customize->add_setting('center_footer', 
+  array(
+    'default'        => 'Explore',
+  )
+);
+$wp_customize->add_control('center_footer', 
+  array(
+    'section' => 'custom_theme_options',
+    'label'   => 'Centre Footer Menu Title',
+    'type'    => 'input',
+  )
+);
+
+$wp_customize->add_setting('right_footer', 
+  array(
+    'default'        => 'Account',
+  )
+);
+$wp_customize->add_control('right_footer', 
+  array(
+    'section' => 'custom_theme_options',
+    'label'   => 'Right Footer Menu Title',
+    'type'    => 'input',
+  )
+);
 $wp_customize->add_setting('footer_text', 
   array(
     'default'        => 'Default Text For Footer Section',
