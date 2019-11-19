@@ -18,7 +18,7 @@ get_header();
             <a href="/register"><h2 class="unselected uppercase">Register</h2></a>
           </div>
           <div class="cell small-6 active">
-          <h2 class="highlight uppercase">Log-in</h2>
+          <h2 class="highlight uppercase">Login</h2>
           </div>
         </div>
         <div class="main-form__body cell small-12">
