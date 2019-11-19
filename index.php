@@ -86,27 +86,25 @@ get_header(); ?>
       <?php while ( $count < get_theme_mod( 'index_post_list', '5' ) && $loop->have_posts() ) : $loop->the_post(); ?>
 
       <?php if ( has_post_thumbnail() ) { ?>
-
         <div class="cell small-12 userPost grid-x">
-            <div class="cell small-12 grid-x">
-              <div class="cell txt large-7 small-12 large-order-1 small-order-2">
-
-                  <div class="profile">
-                   <div class="profileImage">
-                    <!-- <img src="users/profile/1.jpg"/> -->
-                    <?php echo get_avatar( get_the_author_meta('ID'), 50); ?>
-                  </div>
-                  <h2><?php the_author(); ?></h2>
-                  <h3><?php the_date(); ?></h3>
-                </div>
-                  <p><?php the_content(); ?></p>
-                </div>
-                <div class="cell large-5 small-12 large-order-2 small-order-1 postImage">
-                  <?php the_post_thumbnail( 'full' ); ?>
-                </div>
+         <div class="cell small-12 grid-x">
+          <div class="cell txt large-7 small-12 large-order-1 small-order-2">
+            <div class="profile">
+              <div class="profileImage">
+              <?php echo get_avatar( get_the_author_meta('ID'), 50); ?>
               </div>
+              <h2><?php the_author(); ?></h2>
+              <h3><?php the_date(); ?></h3>
             </div>
-
+            <p><?php echo $post->post_content; ?></p>
+          </div>
+          <div class="cell large-5 small-12 large-order-2 small-order-1 boxImage">
+            <div class="postImage">
+              <?php the_post_thumbnail('full') ?>
+            </div>
+          </div>
+        </div>
+        </div>
       <?php 
           }else{ 
       ?>
