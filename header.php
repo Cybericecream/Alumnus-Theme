@@ -44,7 +44,7 @@
             
             <?php wp_nav_menu(
                         array(
-                            'menu' => 'mobileNav',
+                            'menu' => 'mobile-nav',
                             'menu_class'     => 'mobileNavMenu-menu',
                         )
                     );?>
@@ -69,7 +69,7 @@
                         <ul class="menu text-right">
                             <?php wp_nav_menu(
                                 array(
-                                    'menu' => 'main-menu',
+                                    'menu' => 'primary-menu',
                                     'link_before' => '<span class="screen-reader-text">',
                                     'link_after' => '</span>',
                                 )

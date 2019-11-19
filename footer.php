@@ -16,30 +16,32 @@
 
         <div class="cell small-4">
         <h2>Student Area</h2>
-        <ul class="footerLists">
-        <li>Student</li>
-        <li>Events</li>
-        <li>Gallery</li>
-        <li>News</li>
-        </ul>
+        <?php wp_nav_menu(
+          array(
+              'menu' => 'footer-left',
+              'menu_class'     => 'footerLists',
+          )
+        );?>
         </div>
 
         <div class="cell small-4">
         <h2>Alumni</h2>
-        <ul class="footerLists">
-          <li>Contact Us</li>
-          <li>About Us</li>
-          <li>Our Students</li>
-        </ul>
+        <?php wp_nav_menu(
+          array(
+              'menu' => 'footer-centre',
+              'menu_class'     => 'footerLists',
+          )
+        );?>
         </div>
 
         <div class="cell small-4">
         <h2>Account</h2>
-        <ul class="footerLists">
-          <li>Log-In</li>
-          <li>Register</li>
-          <li>Password Reset</li>
-        </ul>
+        <?php wp_nav_menu(
+          array(
+              'menu' => 'footer-right',
+              'menu_class'     => 'footerLists',
+          )
+        );?>
         </div>
 
       </div>
@@ -48,13 +50,14 @@
     </div>
     <div class="subFooter grid-x">
     <div class="cell small-12 ">
-      <ul class="socialList">
+
+      <!-- <ul class="socialList">
         <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
         <li><a href=""><i class="fab fa-instagram"></i></a></li>
         <li><a href=""><i class="fab fa-twitter"></i></a></li>
         <li><a href=""><i class="fab fa-linkedin-in"></a></i></li>
         <li><a href=""><i class="fab fa-github"></i></a></li>
-      </ul>
+      </ul> -->
       <p><?php echo get_theme_mod( 'footer_text' ); ?></p>
     </div>
     </div>

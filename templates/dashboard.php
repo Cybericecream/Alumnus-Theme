@@ -32,7 +32,7 @@ get_header(); ?>
                       <h2><?php echo get_the_author_meta('display_name', $authorID); ?></h2>
                       <h3><?php echo $post->post_date; ?></h3>
                     </div>
-                    <p><?php echo $post->post_content; ?></p>
+                    <?php echo $post->post_content; ?>
                     <div class="cell large-5 small-12 large-order-2 small-order-1 boxImage">
                       <?php the_post_thumbnail('full') ?>
                     </div>
@@ -52,10 +52,10 @@ get_header(); ?>
                           </div>
                           <h2><?php echo get_the_author_meta('display_name', $authorID); ?></h2>
                           <h3><?php echo $post->post_date; ?></h3>
+            </div>
                           <div>
                             <p><?php echo $post->post_content; ?></p>
                           </div>
-                        </div>
                       </div>
                     </div>
                   </div>
