@@ -8,9 +8,9 @@ function custom_new_menu() {
 		array(
 		'primary-menu' => __( 'Primary Menu' ),
 		'mobile-nav' => __( 'Mobile Navigation Menu' ),
-		'footer-left' => __( 'Footer Left' ),
-		'footer-centre' => __( 'Footer Centre' ),
-		'footer-right' => __( 'Footer Right' )
+		'footer-left' => __( 'Left Footer' ),
+		'footer-centre' => __( 'Centre Footer' ),
+		'footer-right' => __( 'Right Footer' )
 		)
 	);
 }
