@@ -51,7 +51,6 @@ get_header(); ?>
     <div class="cell large-6 small-6">
       <h2 class="welcome">
         <span class="welcomeSub">Welcome.</span><br />
-        North Metropolitan<br />
         <span class="uppercase">tafe</span> Alumni<br />
         <a href="signUp.php" class="uppercase primaryButton">sign-up</a>
       </h2>
