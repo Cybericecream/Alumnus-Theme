@@ -29,7 +29,7 @@ get_header(); ?>
                       <div class="profileImage">
                         <?php echo get_avatar($authorID, 50); ?>
                       </div>
-                      <h2><?php echo get_the_author_meta('display_name', $authorID); ?></h2>
+                      <h2><?php echo get_the_author_meta('first_name', $authorID) . ' ' . get_the_author_meta('last_name', $authorID);?></h2>
                       <h3><?php echo $post->post_date; ?></h3>
                     </div>
                     <p><?php echo $post->post_content; ?></p>
@@ -50,7 +50,7 @@ get_header(); ?>
                           <div class="profileImage">
                             <?php echo get_avatar($authorID, 50); ?>
                           </div>
-                          <h2><?php echo get_the_author_meta('display_name', $authorID); ?></h2>
+                          <h2><?php echo get_the_author_meta('first_name', $authorID) . ' ' . get_the_author_meta('last_name', $authorID) ?></h2>
                           <h3><?php echo $post->post_date; ?></h3>
                           <div>
                             <p><?php echo $post->post_content; ?></p>
