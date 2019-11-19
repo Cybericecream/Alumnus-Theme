@@ -14,7 +14,7 @@ if (! class_exists('Alumnus_Register_Form')) {
         
         public function widget( $args, $instance ) {
             echo $args['before_widget'];
-            $startYear = 2010;
+            $startYear = 1970;
             $endYear = date('Y');
             $gradYearOptions = '';
             for ($year = $endYear; $year >= $startYear; $year--) { 
