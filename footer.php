@@ -15,33 +15,39 @@
       <div class="cell large-4 small-12 grid-x">
 
         <div class="cell small-4">
-        <h2>Student Area</h2>
-        <?php wp_nav_menu(
-          array(
-              'menu' => 'footer-left',
-              'menu_class'     => 'footerLists',
-          )
-        );?>
+        <h2>Alumni</h2>
+        <ul>
+          <?php wp_nav_menu(
+            array(
+                'menu' => __(' Left Footer '),
+                'menu_class'     => 'footerLists'
+            )
+          );?>
+        </ul>
         </div>
 
         <div class="cell small-4">
-        <h2>Alumni</h2>
-        <?php wp_nav_menu(
-          array(
-              'menu' => 'footer-centre',
-              'menu_class'     => 'footerLists',
-          )
-        );?>
+        <h2>Explore</h2>
+        <ul>
+          <?php wp_nav_menu(
+            array(
+                'menu' => __(' Centre Footer '),
+                'menu_class'     => 'footerLists'
+            )
+          );?>
+        </ul>
         </div>
 
         <div class="cell small-4">
         <h2>Account</h2>
-        <?php wp_nav_menu(
-          array(
-              'menu' => 'footer-right',
-              'menu_class'     => 'footerLists',
-          )
-        );?>
+        <ul>
+          <?php wp_nav_menu(
+            array(
+                'menu' => __(' Right Footer '),
+                'menu_class'     => 'footerLists'
+            )
+          );?>
+        </ul>
         </div>
 
       </div>
