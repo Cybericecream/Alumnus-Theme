@@ -20,7 +20,8 @@
                     </div>
                 </div>
             <?php } ?>
-            <div class="eventCallender">
+            <ul class="multilevel-accordion-menu vertical menu eventCallender" data-accordion-menu>
+                
                 <?php 
 
                 $loop = new WP_Query( array(
@@ -32,21 +33,20 @@
                 $count = 1;
                 
                 while (  $count < $instance['amount'] && $loop->have_posts() ) : $loop->the_post() ?>
-                    <div class="wrap-<?php echo $count; ?>">
-                        <input type="radio" id="tab-<?php echo $count; ?>" name="tabs">
-                        <label for="tab-<?php echo $count; ?>"><div><?php the_title(); ?></div><div class="cross"></div></label>
-                        <div class="content">
-                            <span><?php echo esc_attr( get_post_meta( get_the_ID(), 'hcf_published_date', true ) ); ?></span>
-                            <p><?php echo esc_attr( get_post_meta( get_the_ID(), 'event_description', true ) ); ?></p>
-                        </div>
-                    </div>
+                    <li class="eCElement">
+                        <a href="#"><?php the_title(); ?></a>
+                        <ul class="menu vertical sublevel-2">
+                        <li><p><?php echo esc_attr( get_post_meta( get_the_ID(), 'hcf_published_date', true ) ); ?></p></li>
+                        <li><p><?php echo esc_attr( get_post_meta( get_the_ID(), 'event_description', true ) ); ?></p></li>
+                        </ul>
+                    </li>
                 <?php 
 
                 $count++;
 
                 endwhile; wp_reset_query();?>
-            </div>
-        <?php
+            </ul>
+            <?php
             echo $args['after_widget'];
         }
 

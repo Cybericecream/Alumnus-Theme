@@ -28,7 +28,7 @@ if (! class_exists('Alumnus_Post_Form')) {
               <?php require_once get_template_directory() . '/functions/dashboard/alumnus_create_post.php'; ?>
               <form name="createPost" id="createPost" method="POST" action="<?php echo esc_url( site_url( '/new-post' )) ?>" enctype="application/x-www-form-urlencoded">
                 <textarea class="postTextarea" name="content" row="7" placeholder="What's On Your Mind?"></textarea>
-                <input name="image" type="file">
+                <!-- <input name="image" type="file"> -->
 
                   <!-- <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'"> -->
                   <input class="btn primaryButton postButton" type='submit' name='submit' value="Post" />
