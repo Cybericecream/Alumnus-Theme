@@ -25,19 +25,19 @@
 
                 $loop = new WP_Query( array(
                     'post_type' => 'events',
-                    'posts_per_page' => -1
+                    'posts_per_page' => 0
                 )
                 );
                 
                 $count = 1;
                 
                 while (  $count < $instance['amount'] && $loop->have_posts() ) : $loop->the_post() ?>
-                    <div class="wrap-1">
+                    <div class="wrap-<?php echo $count; ?>">
                         <input type="radio" id="tab-<?php echo $count; ?>" name="tabs">
                         <label for="tab-<?php echo $count; ?>"><div><?php the_title(); ?></div><div class="cross"></div></label>
                         <div class="content">
-                        <span><?php echo esc_attr( get_post_meta( get_the_ID(), 'hcf_published_date', true ) ); ?></span>
-                        <p><?php echo esc_attr( get_post_meta( get_the_ID(), 'event_description', true ) ); ?></p>
+                            <span><?php echo esc_attr( get_post_meta( get_the_ID(), 'hcf_published_date', true ) ); ?></span>
+                            <p><?php echo esc_attr( get_post_meta( get_the_ID(), 'event_description', true ) ); ?></p>
                         </div>
                     </div>
                 <?php 

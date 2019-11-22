@@ -14,7 +14,7 @@ if (! class_exists('Alumnus_Register_Form')) {
         
         public function widget( $args, $instance ) {
             echo $args['before_widget'];
-            $startYear = 2010;
+            $startYear = 1970;
             $endYear = date('Y');
             $gradYearOptions = '';
             for ($year = $endYear; $year >= $startYear; $year--) { 
@@ -24,22 +24,40 @@ if (! class_exists('Alumnus_Register_Form')) {
                 <?php require_once get_template_directory() . '/functions/alumnus_register.php' ?>
                 <form class="grid-x grid-margin-x" name="registerForm" id="registerForm" method="POST" action="<?php echo esc_url( site_url( '/register' )) ?>">
                     <div class="small-12 cell">
-                        <input type="text" placeholder="Username" class="loginTile__input" name="user_login" required>
+                        <div>
+                            <label for="username">Username </label>
+                            <input type="text" id="username" placeholder="Username" class="loginTile__input" title="Username" name="user_login" required>
+                        </div>
                     </div>
                     <div class="small-12 cell"> 
-                        <input type="email" placeholder="Email" class="loginTile__input" name="user_email" required>
+                        <div>
+                            <label for="email">Email </label>
+                            <input type="email" id="email" placeholder="Email" class="loginTile__input" title="Email" name="user_email" required>
+                        </div>
                     </div>
                     <div class="small-12 cell"> 
-                        <input type="password" placeholder="Password" class="loginTile__input" name="user_pass" required>
+                        <div>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Password" class="loginTile__input" title="Password" name="user_pass" required>
+                        </div>
                     </div> 
-                    <div class="small-12 cell"> 
-                        <input type="password" placeholder="Password Confirm" class="loginTile__input" name="user_pass_confirm" required>
+                    <div class="small-12 cell">
+                        <div>
+                            <label for="passwordConfirm">Password Confirm</label>
+                            <input type="password" id="password" placeholder="Password Confirm" class="loginTile__input" title="Confirm Password" name="user_pass_confirm" required>
+                        </div>
                     </div>
                     <div class="small-6 cell"> 
-                        <input type="text" placeholder="First Name" class="loginTile__input" name="first_name" required>
+                        <div>
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="First Name" class="loginTile__input" title="First Name" name="first_name" required>
+                        </div>
                     </div>
                     <div class="small-6 cell"> 
-                        <input type="text" placeholder="Last Name" class="loginTile__input" name="last_name" required>
+                        <div>
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="Last Name" class="loginTile__input" title="Last Name" name="last_name" required>
+                        </div>
                     </div>
                     <div class="small-6 cell">
                         <label for="yearGraduated" class="loginTile__label">Year Graduated</label>
@@ -57,7 +75,6 @@ if (! class_exists('Alumnus_Register_Form')) {
                     </div>
                     <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
                     <input type='hidden' name='submit' />
-                    </div>
                 </form>
             <?php
             echo $args['after_widget'];

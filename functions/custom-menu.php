@@ -6,9 +6,11 @@
 function custom_new_menu() {
 	register_nav_menus(
 		array(
-		'main-menu' => __( 'Primary Menu' ),
+		'primary-menu' => __( 'Primary Menu' ),
 		'mobile-nav' => __( 'Mobile Navigation Menu' ),
-		'footer-menu' => __( 'Footer Menu' )
+		'footer-left' => __( 'Left Footer' ),
+		'footer-centre' => __( 'Centre Footer' ),
+		'footer-right' => __( 'Right Footer' )
 		)
 	);
 }

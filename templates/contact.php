@@ -18,16 +18,21 @@ global $post;
 				<div class="grid-x aboutContent">
 						<div class="cell small-12">
 							<div class="grid-x">
-							<div class="cell medium-5 small-12 ">
+							<div class="cell large-5 small-12 hide-for-small-only hide-for-medium-only">
 								<img src="<?php echo esc_url( get_theme_mod( 'contact_image' ) ); ?>">  
 							</div>
-							<div class="cell medium-7 small-12 widgetBlock aboutText">
+							<div class="cell large-7 small-12 widgetBlock aboutText">
 								<h2><?php echo $post->post_title; ?></h2>
 								<p><?php echo $post->post_content; ?></p>
 								<?php if ( is_active_sidebar( 'test_area' ) ) : ?>
 									<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
 										<?php dynamic_sidebar( 'test_area' ); ?>
 									</div>
+								<?php endif; ?>
+								<?php if ( is_active_sidebar( 'contact_widget_area' ) ) : ?>
+								<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+									<?php dynamic_sidebar( 'contact_widget_area' ); ?>
+								</div>
 								<?php endif; ?>
 							</div>
 						</div>

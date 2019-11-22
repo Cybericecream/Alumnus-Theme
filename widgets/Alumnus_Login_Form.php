@@ -15,34 +15,41 @@ if (! class_exists('Alumnus_Login_Form')) {
             echo $args['before_widget'];
         ?>
             <div class="grid-container">
-              
-              <?php if (isset($instance['title'])) { ?>
-                  <div class="loginTile__title">
-                      <div class="active">
-                          <h2><?php echo $args['before_title'] . $title . $args['after_title']; ?></h2>
-                      </div>
-                  </div>
-              <?php } ?>
-              <?php require_once get_template_directory() . '/functions/alumnus_login.php' ?>
-              <form name="loginForm" id="loginForm" method="POST" action="<?php echo esc_url( site_url( '/login' )) ?>">
-                  <input type="text" placeholder="Username or Email Address" class="loginTile__input" name="log">
-                  <input type="password" placeholder="Password" class="loginTile__input" name="pwd">
-                  <div class="grid-x">
-                      <div class="cell small-6 text-center">
-                          <button type="reset" class="btn">Clear</button>
-                      </div>
-                      <div class="cell small-6 text-center">
-                          <button type="submit" class="btn primaryButton">Login</button>
-                      </div>
-                  </div>
-                  <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
-                  <input type='hidden' name='submit' />
-              </form>
+                <div class="postTile">
+                    <?php if (isset($instance['title'])) { ?>
+                        <div class="loginTile__title">
+                            <div class="active">
+                                <h2><?php echo $args['before_title'] . $title . $args['after_title']; ?></h2>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <?php require_once get_template_directory() . '/functions/alumnus_login.php' ?>
+                    <form name="loginForm" id="loginForm" method="POST" action="<?php echo esc_url( site_url( '/login' )) ?>">
+                        <div>
+                            <label for="log">Username or Email Address</label>
+                            <input type="text" id="log" class="loginTile__input" name="log" title="Username or Email Address" required>
+                        </div>
+                        <div>
+                            <label for="pwd">Password</label>
+                            <input type="password" id="pwd" placeholder="Password" class="loginTile__input" name="pwd" title="Password" required>
+                        </div>
+                        
+                        <div class="grid-x">
+                            <div class="cell small-6 text-center">
+                                <button type="reset" class="btn">Clear</button>
+                            </div>
+                            <div class="cell small-6 text-center">
+                                <button type="submit" class="btn primaryButton">Login</button>
+                            </div>
+                        </div>
+                        <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'">
+                        <input type='hidden' name='submit' />
+                    </form>
+                </div>
             </div>
         <?php
             echo $args['after_widget'];
         }
-
         public function form( $instance ) {
             if ( isset( $instance[ 'title' ] )) {
                 $title = $instance[ 'title' ];
@@ -57,7 +64,6 @@ if (! class_exists('Alumnus_Login_Form')) {
             </p>
             <?php
         }
-      
         public function update( $new_instance, $old_instance ) {
             $instance = array();
             $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
