@@ -27,7 +27,7 @@ if (! class_exists('Alumnus_Login_Form')) {
                     <form name="loginForm" id="loginForm" method="POST" action="<?php echo esc_url( site_url( '/login' )) ?>">
                         <div>
                             <label for="log">Username or Email Address</label>
-                            <input type="text" id="log" class="loginTile__input" name="log" title="Username or Email Address" required>
+                            <input type="text" id="log" placeholder="Username or Email Address" class="loginTile__input" name="log" title="Username or Email Address" required>
                         </div>
                         <div>
                             <label for="pwd">Password</label>
