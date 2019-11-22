@@ -15,7 +15,7 @@ if (! class_exists('Alumnus_Post_Form')) {
             echo $args['before_widget'];
         ?>
             <div class="grid-container ">
-                <div class="postTitle">
+                <div class="postTile">
 
             <?php if (isset($instance['title'])) { ?>
                   <div class="postTile__title">
@@ -27,11 +27,11 @@ if (! class_exists('Alumnus_Post_Form')) {
 
               <?php require_once get_template_directory() . '/functions/dashboard/alumnus_create_post.php'; ?>
               <form name="createPost" id="createPost" method="POST" action="<?php echo esc_url( site_url( '/new-post' )) ?>" enctype="application/x-www-form-urlencoded">
-                <textarea name="content" row="3" placeholder="What's On Your Mind?"></textarea>
+                <textarea class="postTextarea" name="content" row="7" placeholder="What's On Your Mind?"></textarea>
                 <input name="image" type="file">
 
                   <!-- <input type="hidden" name="redirect_to" value="' . esc_url( site_url( '' )) .'"> -->
-                  <input type='submit' name='submit' value="Post" />
+                  <input class="btn primaryButton postButton" type='submit' name='submit' value="Post" />
               </form>
             </div>
             </div>

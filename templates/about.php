@@ -18,7 +18,7 @@ global $post;
 				<div class="grid-x aboutContent">
 						<div class="cell small-12">
 							<div class="grid-x">
-							<div class="cell large-5 small-12 ">
+							<div class="cell large-5 small-12 hide-for-small-only hide-for-medium-only">
 								<img src="<?php echo esc_url( get_theme_mod( 'about_image' ) ); ?>">  
 							</div>
 							<div class="cell large-7 small-12 widgetBlock aboutText">
