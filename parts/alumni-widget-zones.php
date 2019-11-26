@@ -26,7 +26,7 @@ function alumni_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Mobile Nav Widget Area',
 		'id'            => 'mobile_nav_widget_area',
-		'before_widget' => '<div class="cell small-10 small-offset-1 widgetBlock loginTile text-center">',
+		'before_widget' => '<div class="cell small-10 widgetBlock loginTile text-center">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="rounded">',
 		'after_title'   => '</h2>',
